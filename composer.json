@@ -1,0 +1,20 @@
+{
+    "name": "blackator/complex",
+    "description": "Complex numbers sample",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Dmitry Titov",
+            "email": "blackator@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Blackator\\Complex\\": "src/"
+        }
+    }
+}
