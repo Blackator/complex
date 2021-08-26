@@ -60,10 +60,13 @@ class MathComplex
      * Finding the quotient of complex numbers
      * @param ComplexNumber $firstNumber First complex number
      * @param ComplexNumber $secondNumber Second complex number
+     * @throws DivisionByZeroException
      * @return ComplexNumber
      */
     public static function div(ComplexNumber $firstNumber, ComplexNumber $secondNumber): ComplexNumber
     {
+        $divider = $secondNumber->getReal() ** 2 + $secondNumber->getImaginary() ** 2;
+        if ($divider == 0) throw new DivisionByZeroException();
         return new ComplexNumber(
             ($firstNumber->getReal() * $secondNumber->getReal() + $firstNumber->getImaginary() * $secondNumber->getImaginary()) / ($secondNumber->getReal() ** 2 + $secondNumber->getImaginary() ** 2),
             ($secondNumber->getReal() * $firstNumber->getImaginary() - $firstNumber->getReal() * $secondNumber->getImaginary()) / ($secondNumber->getReal() ** 2 + $secondNumber->getImaginary() ** 2)
